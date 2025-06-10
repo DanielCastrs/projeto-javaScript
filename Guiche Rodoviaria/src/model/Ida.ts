@@ -8,12 +8,23 @@ export class Ida extends Passagem {
     this._destinoIda = "Praia Grande";
     this._precoIda = 31.5;
   }
-  visualizar() {
-    console.log(`Nº da passagem ${this.numero}`);
-    console.log(`Nome: ${this.nome}`);
-    console.log(`CPF: ${this.cpf}`);
-    console.log(`Contato: ${this.contato}`);
-    console.log(`Contato: ${this._destinoIda}`);
-    console.log(`Contato: ${this._precoIda}`);
+
+  public get detinoIda() {
+    return this._destinoIda;
+  }
+
+  public set destinoIda(destinoIda: string) {
+    this.destinoIda = destinoIda;
+  }
+
+  public get precoIda() {
+    return this._precoIda;
+  }
+
+  public set precoIda(precoIda: number) {
+    this._precoIda = precoIda;
+  }
+  valorPass(): void {
+    console.log(`Preço da passagem ${this._destinoIda}`);
   }
 }

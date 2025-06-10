@@ -8,4 +8,19 @@ export class Volta extends Passagem {
     this._destinoVolta = "Itaquera";
     this._precoVolta = 25.9;
   }
+  public get precoVolta() {
+    return this._precoVolta;
+  }
+
+  public set precoVolta(precoVolta: number) {
+    this._precoVolta = precoVolta;
+  }
+
+  public get destinoVolta() {
+    return this._destinoVolta;
+  }
+
+  public set destinoVolta(destinoVolta: string) {
+    this._destinoVolta = destinoVolta;
+  }
 }

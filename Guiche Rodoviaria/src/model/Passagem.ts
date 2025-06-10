@@ -35,4 +35,13 @@ export abstract class Passagem {
   public set contato(contato: number) {
     this._contato = contato;
   }
+
+  visualizar() {
+    console.log(`Nº da passagem ${this.numero}`);
+    console.log(`Nome: ${this.nome}`);
+    console.log(`CPF: ${this.cpf}`);
+    console.log(`Contato: ${this.contato}`);
+    // console.log(`Contato: ${this._destinoIda}`);
+    // console.log(`Contato: ${this._precoIda}`);
+  }
 }
