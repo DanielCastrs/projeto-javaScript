@@ -18,10 +18,25 @@ export class PassagemController implements PassagemRepository {
     }
   }
   atualizarDados(passagem: Passagem): void {
-    throw new Error("Method not implemented.");
+    let buscarPassagem = this.buscarNoArray(passagem.numero);
+    if (buscarPassagem != null) {
+      this.listaPassagem[this.listaPassagem.indexOf(buscarPassagem)] = passagem;
+      console.log(
+        "\nA Passagem numero: " +
+          passagem.numero +
+          " Foi atualizada com sucesso"
+      );
+    }
   }
   cancelarPass(numero: number): void {
-    throw new Error("Method not implemented.");
+    let buscarPassagem = this.buscarNoArray(numero);
+
+    if (buscarPassagem != null) {
+      this.listaPassagem.splice(this.listaPassagem.indexOf(buscarPassagem), 1);
+      console.log("\nA Conta numero: " + numero + " foi apagada com sucesso!");
+    } else {
+      console.log("\nA Conta numero: " + numero + " Não foi encontrada!");
+    }
   }
   disponivel(): void {
     console.log(40 - this.numero);

@@ -6,7 +6,7 @@ export class Ida extends Passagem {
   constructor(numero: number, nome: string, cpf: number, contato: number) {
     super(numero, nome, cpf, contato);
     this._destinoIda = "Praia Grande";
-    this._precoIda = 31.5;
+    this._precoIda = 25;
   }
 
   public get detinoIda() {

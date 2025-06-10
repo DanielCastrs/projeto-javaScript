@@ -6,7 +6,7 @@ export class Volta extends Passagem {
   constructor(numero: number, nome: string, cpf: number, contato: number) {
     super(numero, nome, cpf, contato);
     this._destinoVolta = "Itaquera";
-    this._precoVolta = 25.9;
+    this._precoVolta = 25;
   }
   public get precoVolta() {
     return this._precoVolta;
