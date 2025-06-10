@@ -1,4 +1,9 @@
 import leia from "readline-sync";
+import { Ida } from "./src/model/Ida";
+import { Volta } from "./src/model/volta";
+
+const passagem: Ida = new Ida(1, "Daniel", 123, 987366959);
+passagem.visualizar();
 
 export function main() {
   let opcao: number;
@@ -50,4 +55,4 @@ export function main() {
   }
 }
 
-main();
+// main();
