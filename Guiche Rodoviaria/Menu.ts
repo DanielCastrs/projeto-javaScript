@@ -31,7 +31,7 @@ export function main() {
     console.log("            4 - Cancelar Compra                      ");
     console.log("            5 - Visualizar acentos disponiveis       ");
     console.log("            6 - Finalizar compra                     ");
-    console.log("            7 - Cancelar operação                    ");
+    console.log("                                                     ");
     console.log("*****************************************************");
 
     //Inserir opção
@@ -48,26 +48,28 @@ export function main() {
     switch (opcao) {
       case 1:
         console.log("\nCompra de Passagem");
-        let cc1: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
-        let cc2: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
-        let cc3: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
-        let cc4: Volta = new Volta(
-          passagens.gerarNumero(),
-          "Daniel",
-          1234,
-          98736
-        );
-        let cc5: Volta = new Volta(
-          passagens.gerarNumero(),
-          "Daniel",
-          1234,
-          98736
-        );
-        passagens.comprarPass(cc1);
-        passagens.comprarPass(cc2);
-        passagens.comprarPass(cc3);
-        passagens.comprarPass(cc4);
-        passagens.comprarPass(cc5);
+
+        //Tire os comentarios para testar
+        // let cc1: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
+        // let cc2: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
+        // let cc3: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
+        // let cc4: Volta = new Volta(
+        //   passagens.gerarNumero(),
+        //   "Daniel",
+        //   1234,
+        //   98736
+        // );
+        // let cc5: Volta = new Volta(
+        //   passagens.gerarNumero(),
+        //   "Daniel",
+        //   1234,
+        //   98736
+        // );
+        // passagens.comprarPass(cc1);
+        // passagens.comprarPass(cc2);
+        // passagens.comprarPass(cc3);
+        // passagens.comprarPass(cc4);
+        // passagens.comprarPass(cc5);
 
         tipo = leia.keyInSelect(tiposPassagem, "", { cancel: false }) + 1;
         nome = leia.question("insira seu nome: ");
