@@ -37,6 +37,7 @@ export abstract class Passagem {
   }
 
   visualizar() {
+    console.log("*****************************");
     console.log(`Nº da passagem ${this.numero}`);
     console.log(`Nome: ${this.nome}`);
     console.log(`CPF: ${this.cpf}`);

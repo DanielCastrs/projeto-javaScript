@@ -48,6 +48,26 @@ export function main() {
     switch (opcao) {
       case 1:
         console.log("\nCompra de Passagem");
+        let cc1: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
+        let cc2: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
+        let cc3: Ida = new Ida(passagens.gerarNumero(), "Daniel", 1234, 98736);
+        let cc4: Volta = new Volta(
+          passagens.gerarNumero(),
+          "Daniel",
+          1234,
+          98736
+        );
+        let cc5: Volta = new Volta(
+          passagens.gerarNumero(),
+          "Daniel",
+          1234,
+          98736
+        );
+        passagens.comprarPass(cc1);
+        passagens.comprarPass(cc2);
+        passagens.comprarPass(cc3);
+        passagens.comprarPass(cc4);
+        passagens.comprarPass(cc5);
 
         tipo = leia.keyInSelect(tiposPassagem, "", { cancel: false }) + 1;
         nome = leia.question("insira seu nome: ");
@@ -131,9 +151,24 @@ export function main() {
         break;
       case 6:
         console.log("Finalizar compra");
+        passagens.listarCompra();
         let total = contIda + contVolta;
-        total = total * 25;
+        let contagem = passagens.tamanho();
+        console.log(passagens.tamanho());
+        total = contagem * 25;
         console.log("Total a pagar R$:" + total);
+        {
+          credito = leia.questionFloat("Insira o CREDITO: R$");
+          if (credito >= total) {
+            console.log("compra realizada, troco de: R$:" + (credito - total));
+          } else {
+            console.log("Valor insuficiente, insira novo valor");
+          }
+        }
+        while (total > credito);
+
+        sobre();
+        process.exit(0);
         break;
       default:
         console.log("Opção invalida");

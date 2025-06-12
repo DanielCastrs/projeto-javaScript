@@ -7,7 +7,9 @@ export class PassagemController implements PassagemRepository {
 
   comprarPass(passagem: Passagem): void {
     this.listaPassagem.push(passagem);
-    console.log("\nA Conta: " + passagem.numero + " foi compada com sucesso");
+    console.log(
+      "\nA Conta: " + passagem.numero + " foi adicionada com sucesso"
+    );
   }
   consultarPass(numero: number): void {
     let buscarPassagem = this.buscarNoArray(numero);
@@ -56,5 +58,13 @@ export class PassagemController implements PassagemRepository {
       if (passagem.numero === numero) return passagem;
     }
     return null;
+  }
+  public tamanho() {
+    return this.listaPassagem.length;
+  }
+  public listarCompra() {
+    for (let passagem of this.listaPassagem) {
+      passagem.visualizar();
+    }
   }
 }

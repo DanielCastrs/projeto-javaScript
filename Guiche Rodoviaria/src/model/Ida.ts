@@ -27,4 +27,8 @@ export class Ida extends Passagem {
   valorPass(): void {
     console.log(`Preço da passagem ${this._destinoIda}`);
   }
+  visualiza() {
+    super.visualizar();
+    console.log("Destino: " + this.destinoIda + "\nPreço: " + this.precoIda);
+  }
 }
